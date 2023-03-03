@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/home/codad5/workspace/node/fd/src/logs/debug/.e9aefbb49a2a04e8f81874666fe2c8dadcdd235b-audit.json",
+    "files": [
+        {
+            "date": 1677831540132,
+            "name": "/home/codad5/workspace/node/fd/src/logs/debug/2023-03-03.log",
+            "hash": "5aa9858781406757e9ae6f1a336de2e411ea8a07dea44931111623368350a8e9"
+        }
+    ],
+    "hashType": "sha256"
+}
