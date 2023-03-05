@@ -3,7 +3,7 @@ import { UserSignupErrorResponse, UserVerificationErrorResponse } from "src/type
 import { signupFieldError } from "src/types/field"
 import Validator from "@utils/Validator"
 import { UserModel } from "@models/user";
-import { generateVerificationCode, sendVerificationCode, VerifyPhone } from "@services/verification";
+import { generateVerificationCode, sendVerificationCode, setVerificationCode, VerifyPhone } from "@utils/verification";
 import redisClient from "@services/redis";
 import { hashPassword } from "@utils/helper";
 
@@ -102,8 +102,7 @@ export default class UserSignupController {
 
     async postSignup()
     {
-        const code = generateVerificationCode()
-        await redisClient.set(`verification:${this.phone}`, code, "EX", 60 * 5)
+        const code = await setVerificationCode(this.phone)
         await sendVerificationCode(this.phone, code) 
         return true
     }

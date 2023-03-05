@@ -9,7 +9,7 @@ const userSchema = new Schema<UserDocument>({
     email: { type: String, unique: true },
     password: { type: String, required: true },
     verify: {type:Boolean, required:true}
-}, {collection:"fd"});
+}, {collection:"users"});
 
 
 

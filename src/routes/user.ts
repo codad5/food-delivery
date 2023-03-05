@@ -64,9 +64,9 @@ router.post("/verify/phone", async (req, res) => {
         return res.status(200).json(ReponseHandler.successJson({
             name: user?.name,
             password: "****",
-            email: user.email,
+            email: user.email ?? "",
             verify:user.verify,
-            phone: user?.name
+            phone: user?.phone
         }, "User phone verification successful", 200))
     }
     catch(e)
