@@ -2199,3 +2199,89 @@ src/services/redis.ts(6,21): error TS2769: No overload matches this call.
     at Object.nodeDevHook [as .ts] (/home/codad5/workspace/node/fd/node_modules/ts-node-dev/lib/hook.js:63:13)
     at Module.load (node:internal/modules/cjs/loader:1103:32)
     at Function.Module._load (node:internal/modules/cjs/loader:942:12)
+2023-03-03 19:10:26 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(26,61): error TS2304: Cannot find name 'e'.
+
+Error: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(26,61): error TS2304: Cannot find name 'e'.
+
+    at Object.<anonymous> (/home/codad5/workspace/node/fd/src/services/verification.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1246:14)
+    at Module._compile (/home/codad5/workspace/node/fd/node_modules/source-map-support/source-map-support.js:521:25)
+    at Module.m._compile (/tmp/ts-node-dev-hook-3790092843772863.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1300:10)
+    at require.extensions..jsx.require.extensions..js (/tmp/ts-node-dev-hook-3790092843772863.js:114:20)
+    at require.extensions.<computed> (/tmp/ts-node-dev-hook-3790092843772863.js:71:20)
+    at Object.nodeDevHook [as .ts] (/home/codad5/workspace/node/fd/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1103:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:942:12)
+2023-03-03 19:10:52 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(26,9): error TS2304: Cannot find name 'e'.
+src/services/verification.ts(26,14): error TS2552: Cannot find name 'Errir'. Did you mean 'Error'?
+src/services/verification.ts(27,61): error TS2304: Cannot find name 'e'.
+
+Error: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(26,9): error TS2304: Cannot find name 'e'.
+src/services/verification.ts(26,14): error TS2552: Cannot find name 'Errir'. Did you mean 'Error'?
+src/services/verification.ts(27,61): error TS2304: Cannot find name 'e'.
+
+    at Object.<anonymous> (/home/codad5/workspace/node/fd/src/services/verification.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1246:14)
+    at Module._compile (/home/codad5/workspace/node/fd/node_modules/source-map-support/source-map-support.js:521:25)
+    at Module.m._compile (/tmp/ts-node-dev-hook-3790092843772863.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1300:10)
+    at require.extensions..jsx.require.extensions..js (/tmp/ts-node-dev-hook-3790092843772863.js:114:20)
+    at require.extensions.<computed> (/tmp/ts-node-dev-hook-3790092843772863.js:71:20)
+    at Object.nodeDevHook [as .ts] (/home/codad5/workspace/node/fd/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1103:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:942:12)
+2023-03-03 19:11:01 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(26,61): error TS2304: Cannot find name 'e'.
+
+Error: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(26,61): error TS2304: Cannot find name 'e'.
+
+    at Object.<anonymous> (/home/codad5/workspace/node/fd/src/services/verification.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1246:14)
+    at Module._compile (/home/codad5/workspace/node/fd/node_modules/source-map-support/source-map-support.js:521:25)
+    at Module.m._compile (/tmp/ts-node-dev-hook-3790092843772863.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1300:10)
+    at require.extensions..jsx.require.extensions..js (/tmp/ts-node-dev-hook-3790092843772863.js:114:20)
+    at require.extensions.<computed> (/tmp/ts-node-dev-hook-3790092843772863.js:71:20)
+    at Object.nodeDevHook [as .ts] (/home/codad5/workspace/node/fd/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1103:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:942:12)
+2023-03-03 19:15:41 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/user.ts(51,1): error TS2304: Cannot find name 'App'.
+src/routes/user.ts(51,5): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/user.ts(51,1): error TS2304: Cannot find name 'App'.
+src/routes/user.ts(51,5): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (/home/codad5/workspace/node/fd/src/routes/user.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1246:14)
+    at Module._compile (/home/codad5/workspace/node/fd/node_modules/source-map-support/source-map-support.js:521:25)
+    at Module.m._compile (/tmp/ts-node-dev-hook-5892017253926569.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1300:10)
+    at require.extensions..jsx.require.extensions..js (/tmp/ts-node-dev-hook-5892017253926569.js:114:20)
+    at require.extensions.<computed> (/tmp/ts-node-dev-hook-5892017253926569.js:71:20)
+    at Object.nodeDevHook [as .ts] (/home/codad5/workspace/node/fd/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1103:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:942:12)
+2023-03-03 19:17:06 error: uncaughtException: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(31,33): error TS2304: Cannot find name 'type'.
+
+Error: ⨯ Unable to compile TypeScript:
+src/services/verification.ts(31,33): error TS2304: Cannot find name 'type'.
+
+    at Object.<anonymous> (/home/codad5/workspace/node/fd/src/services/verification.ts:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1246:14)
+    at Module._compile (/home/codad5/workspace/node/fd/node_modules/source-map-support/source-map-support.js:521:25)
+    at Module.m._compile (/tmp/ts-node-dev-hook-5892017253926569.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1300:10)
+    at require.extensions..jsx.require.extensions..js (/tmp/ts-node-dev-hook-5892017253926569.js:114:20)
+    at require.extensions.<computed> (/tmp/ts-node-dev-hook-5892017253926569.js:71:20)
+    at Object.nodeDevHook [as .ts] (/home/codad5/workspace/node/fd/node_modules/ts-node-dev/lib/hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1103:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:942:12)

@@ -1,5 +1,6 @@
 import { randomBytes } from 'crypto';
 import { Twilio } from 'twilio';
+import redisClient from './redis';
 
 export function generateVerificationCode(): string {
     // Generate random 6-digit code
@@ -23,6 +24,11 @@ export async function sendVerificationCode(phoneNumber: string, code: string): P
         console.log(`Verification code sent to ${phoneNumber}`);
     } catch (error) {
         console.error(error);
-        throw new Error('Failed to send verification code');
+        throw new Error('Failed to send verification code '+(error as Error).message);
     }
+}
+
+
+export async function VerifyPhone(phone:string, code: string) {
+    return await redisClient.get(`verification:${phone}`)
 }

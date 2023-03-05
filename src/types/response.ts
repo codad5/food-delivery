@@ -1,4 +1,5 @@
 import { signupFieldError } from "./field"
+import { User } from "./modelData"
 
 export type NewResponse<T> = {
     status: "success"|"error",
@@ -14,6 +15,8 @@ export type UserSignupResponse = {
     token:string
 }
 
+export type VerifyPhonResponse = User
+
 export type UserSignupErrorResponse = {
     name: string ,
     phone : string, 
@@ -22,13 +25,19 @@ export type UserSignupErrorResponse = {
     errorInput?: signupFieldError[]
 }
 
+export type UserVerificationErrorResponse = {
+    phone:string,
+    name?:string,
+    email?:string,
+    message?:string
+}
 export type ServerErrorResponse = {
     message:string,
     errorcode: number
 }
 
-export type SuccessResponseData = UserSignupResponse;
+export type SuccessResponseData = UserSignupResponse | VerifyPhonResponse;
 
-export type ErrorResponseData = ServerErrorResponse | UserSignupErrorResponse
+export type ErrorResponseData = ServerErrorResponse | UserSignupErrorResponse | UserVerificationErrorResponse
 
 export type ResponseData = SuccessResponseData|ErrorResponseData

@@ -9,9 +9,12 @@ const userSchema = new Schema<UserDocument>({
     email: { type: String, unique: true },
     password: { type: String, required: true },
     verify: {type:Boolean, required:true}
-});
+}, {collection:"fd"});
+
+
 
 export class UserModel {
+    
     private model: Model<UserDocument>;
 
     constructor() {
@@ -36,6 +39,14 @@ export class UserModel {
         // Create a new user document using the Mongoose model
         const newUser = new this.model(user);
         return await newUser.save();
+    }
+
+    async findOneAndUpdate(field: string, fieldValue: any, updateData: Partial<User>) {
+        return await this.model.findOneAndUpdate(
+            { [field]: fieldValue }, // Find the user based on the specified field and its value
+            { $set: updateData }, // Update the user's data
+            { new: true } // Return the updated user data
+        );
     }
 }
 

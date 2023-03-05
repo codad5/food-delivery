@@ -51,7 +51,8 @@ class App {
 
     private startMongoose()
     {
-        mongoose.connect('mongodb://localhost/test')
+        const { MONGODB_USER, MONGODB_PASS, MONGODB_HOST, MONGODB_DB } = process.env
+        mongoose.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_HOST}/${MONGODB_DB}?retryWrites=true&w=majority`)
         .then(() => {
             console.log('🚀 Connected to MongoDB');
         })

@@ -1,12 +1,14 @@
 import ReponseHandler from "@utils/responseHandler"
-import { UserSignupErrorResponse } from "src/types/response"
+import { UserSignupErrorResponse, UserVerificationErrorResponse } from "src/types/response"
 import { signupFieldError } from "src/types/field"
 import Validator from "@utils/Validator"
 import { UserModel } from "@models/user";
-import { generateVerificationCode, sendVerificationCode } from "@services/verification";
+import { generateVerificationCode, sendVerificationCode, VerifyPhone } from "@services/verification";
 import redisClient from "@services/redis";
+import { hashPassword } from "@utils/helper";
 
 export default class UserSignupController {
+   
     name : string = ""
     phone : string = ""
     password : string = ""
@@ -78,12 +80,13 @@ export default class UserSignupController {
         let userExist = await this.userExist()
         try{
 
+            console.log(userExist)
             if (userExist) throw new Error(userExist.message)
             
             await this.userModel.createUser({
                 name:this.name,
                 phone:this.phone,
-                password:this.password,
+                password:hashPassword(this.password),
                 email:this.email,
                 verify:false
             })
@@ -103,5 +106,26 @@ export default class UserSignupController {
         await redisClient.set(`verification:${this.phone}`, code, "EX", 60 * 5)
         await sendVerificationCode(this.phone, code) 
         return true
+    }
+
+    static async verify(phone: any, code: any) {
+        const userModel =  new UserModel();
+        let errorJson: UserVerificationErrorResponse = {
+            phone: phone as string,
+            message: "Error validating code"
+        }
+        const user = await userModel.getUserByPhone(phone)
+        if (!user) return errorJson = {
+            ...errorJson,
+            message: "User Does Not exist"
+        }
+
+        const r_code  = await VerifyPhone(phone, code)
+        if (!r_code) return errorJson = {
+            ...errorJson,
+            message: "Code expired"
+        }
+        return  await userModel.findOneAndUpdate("phone", phone, {verify:true});
+
     }
 }
